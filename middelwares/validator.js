@@ -10,6 +10,15 @@ exports.registerRules = () => [
     max: 12,
   }),
 ];
+exports.registerCompanyRules = () => [
+  check("name", "name is required").notEmpty(),
+  check("email", "email is required").notEmpty(),
+  check("email", "check email again").isEmail(),
+  check("password", "password must be  between 6 and 12 character").isLength({
+    min: 6,
+    max: 12,
+  }),
+];
 exports.loginRules = () => [
   check("email", "email is required").notEmpty(),
   check("email", "check email again").isEmail(),

@@ -52,8 +52,8 @@ export const userSlice = createSlice({
     },
     [userRegister.fulfilled]: (state, action) => {
       state.status = "succcessssss";
-      state.user = action.payload.data.newUserToken;
-      localStorage.setItem("token", action.payload.data.token);
+      state.user = action.payload?.data?.newUserToken;
+      localStorage.setItem("token", action.payload?.data?.token);
     },
     [userRegister.rejected]: (state) => {
       state.status = "fail";
